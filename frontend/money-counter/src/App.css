@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.App { 
+  background:linear-gradient( rgba(0, 0, 0, 0.5) 100%, rgba(0, 0, 0, 0.5)100%),url("img/background-image.jpg")!important;
+}
+
+.lesson-class {
+  color: red;
+}
+
+.footer {
+  margin-top: 500px;
+  background: #333;
+}
+
+.btn-start {
+  margin-top: 20%;
+  margin-left: 67%;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  background: #8989fd;
+  padding: 20px 35px 20px 35px;
+}
+
+.navbar {
+  padding: 10px;
+  color: #999;
+  background: #333;
+}
+
