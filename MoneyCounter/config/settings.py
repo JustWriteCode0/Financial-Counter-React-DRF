@@ -20,8 +20,6 @@ INSTALLED_APPS = [
     'SpendingSheet',
     'rest_framework',
     'corsheaders',
-
-    
 ]
 
 REST_FRAMEWORK = {
@@ -42,7 +40,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
-
 ]
 
 ROOT_URLCONF = 'config.urls'
