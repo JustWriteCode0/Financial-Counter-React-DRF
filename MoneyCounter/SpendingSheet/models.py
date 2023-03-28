@@ -2,13 +2,7 @@ from django.db import models
 
 
 class Entry(models.Model):
-    ENTRY_STATUS = (
-        ('without status', '#ffffff'),
-        ('can wait', '#52ff33'),
-        ('important', '#e6ff40'),
-        ('urgently', '#f5bf42'),
-    )   
-    entry_status = models.CharField(max_length=20, choices=ENTRY_STATUS)
+    spent = models.DecimalField(decimal_places=2, max_digits=15)
     category = models.ForeignKey('EntryCategory', on_delete=models.PROTECT, null=True, blank=True)
     content = models.CharField(max_length=300)
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)

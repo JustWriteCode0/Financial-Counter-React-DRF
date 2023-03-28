@@ -2,18 +2,17 @@ import React, {useState} from 'react'
 import axios from 'axios';
 
 
-const FormSend = ({ onClick }) => {
-    const [form, setForm] = useState({entry_status: 'without status', content: ''}); // state of form, this variable will getting info from form
-    const { entry_status, content } = setForm;
+const FormSend = ({ onSubmitSuccess }) => {
+    const [form, setForm] = useState({spent: 'i', content: ''}); // state of form, this variable will getting info from form
+    const { spent, content } = setForm;
 
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
           const response = await axios.post('http://127.0.0.1:8000/api/v1/entry/', form); // send data to server
-          console.log(response.data);
-          
-          onClick(response.status)
+          console.log(response.data, 'response from server after post request');
+          onSubmitSuccess(response.data);
         } catch (error) {
           console.error(error);
         }
@@ -22,9 +21,9 @@ const FormSend = ({ onClick }) => {
     return (
         <div className='form-send'>
             <form id="create-form" onSubmit={handleSubmit}>
-                <input type="hidden" value={entry_status} />
+                <input type="number" className="spent" required value={spent} onChange={(e) => setForm({...form, spent: e.target.value})} />
                 <input className="content" required value={content} onChange={(e) => setForm({...form, content: e.target.value})} />
-                <button type="submit" onClick={handleSubmit}>Add</button>
+                <button type="submit">Add</button>
             </form>
         </div>
     );

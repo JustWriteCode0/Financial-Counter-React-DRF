@@ -33,6 +33,9 @@
   border: solid 1px black;
 }
 
+.entry-spent {
+  color: #fd4d2e;
+}
 
 .footer {
   margin-top: 500px;

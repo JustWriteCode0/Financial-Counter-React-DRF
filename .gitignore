@@ -1,0 +1,5 @@
+MoneyCounter/__pycache__
+MoneyCounter/SpendingSheet/migrations
+MoneyCounter/SpendingSheet/__pycache__
+MoneyCounter/SpendingSheet/db.sqlite3
+.env

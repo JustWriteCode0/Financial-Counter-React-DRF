@@ -8,10 +8,10 @@ import axios from "axios";
 
 
 const App = () => {
-  const [post_request, setRequest] = useState('')
+  const [data, setData] = useState([]) // создаем состояние для данных
 
-  const handleSubmit = (post_request) => {
-    setRequest(post_request)
+  const handleFormSubmit = (newData) => {
+    setData([...data, newData]) // добавляем новые данные в состояние
   }
 
   return (
@@ -19,8 +19,8 @@ const App = () => {
       <Header />
       <p>Data from django</p>
       <div>
-        <FormSend onClick={handleSubmit}  />
-        <Entries post_request={post_request} />
+        <FormSend onSubmitSuccess={handleFormSubmit}/>
+        <Entries data={data} />
       </div>
     <Footer />
     </div>
