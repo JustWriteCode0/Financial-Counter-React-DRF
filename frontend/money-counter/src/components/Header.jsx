@@ -1,14 +1,16 @@
 import React from "react";
-
+import { Typography, Toolbar, AppBar } from '@mui/material'
 
 const Header = () => {
     return (
-        <div className="navbar">
-            <h1 className="navbar-list brand">Brand</h1>
-            <a className="navbar-list" href="">all entries</a>
-            <a className="navbar-list" href="">today entries</a>
-            <a className="navbar-list" href="">finished entries</a>
-        </div>
+        <AppBar position='sticky' >
+            <Toolbar>
+                <Typography variant="h3">Hello world</Typography>
+                <Typography variant="a">Hello world</Typography>
+                <Typography variant="a">Hello world</Typography>
+                <Typography variant="a">Hello world</Typography>
+            </Toolbar> 
+        </AppBar>        
     );
 }
 

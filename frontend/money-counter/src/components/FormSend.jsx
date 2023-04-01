@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import axios from 'axios';
+import { Input, TextField, Box, Button, FormControl } from '@mui/material'
 
 
 const FormSend = ({ onSubmitSuccess }) => {
@@ -19,15 +20,16 @@ const FormSend = ({ onSubmitSuccess }) => {
       }; 
 
     return (
-        <div className='form-send'>
-            <form id="create-form" onSubmit={handleSubmit}>
-                <input type="number" className="spent" required value={spent} onChange={(e) => setForm({...form, spent: e.target.value})} />
-                <input className="content" required value={content} onChange={(e) => setForm({...form, content: e.target.value})} />
-                <button type="submit">Add</button>
+        <Box className='form-send'>
+            <form id="create-form" onSubmit={handleSubmit} >
+              <FormControl>
+                <TextField type="number" label="Expended" variant="filled"  className="spent" required value={spent} onChange={(e) => setForm({...form, spent: e.target.value})} />
+                <TextField label="For what" variant="filled" className="content" required value={content} onChange={(e) => setForm({...form, content: e.target.value})} />
+                <Button variant="contained" type="submit">Add</Button>
+              </FormControl>
             </form>
-        </div>
+        </Box>
     );
-}
-
+  }
 
 export default FormSend
