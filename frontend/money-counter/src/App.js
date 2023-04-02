@@ -5,6 +5,7 @@ import FormSend from "./components/FormSend"
 import Entries from './components/Entries';
 import React, {useState, useEffect} from "react";
 import axios from "axios";
+import { Box, Typography } from '@mui/material'
 
 
 const App = () => {
@@ -15,15 +16,14 @@ const App = () => {
   }
 
   return (
-    <div>
+    <Box variant="div">
       <Header />
-      <p>Data from django</p>
-      <div>
+      <Box variant="div">
         <FormSend onSubmitSuccess={handleFormSubmit}/>
         <Entries data={data} />
-      </div>
-    <Footer />
-    </div>
+      </Box>
+      <Footer />
+    </Box>
     )
   }
 

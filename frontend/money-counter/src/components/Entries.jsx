@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
-import { Container, Typography, Button, Box, Stack } from '@mui/material'
+import { Paper, Typography, Button, Grid, List, ListItem } from '@mui/material'
 import { Delete } from '@mui/icons-material'
 
 
@@ -34,29 +34,29 @@ const Entries = ({data}) => {
   }
 
   return (
-    <Container sx={{
-      backgroundColor: 'success.main',
-      marginTop: '100px',
-      marginBottom: '100px',
-      }}>
-        {entry.map(entry => {
+      entry.map(entry => {
         return (
-        
-          <Box className='entries' key={entry.id} style={{background:entry.color}} sx={{
-            backgroundColor: 'primary.main',
-            padding: '10px',
-            color: 'white',
-          }}>
-            <Stack direction="column" >
-            <Typography variant="h3">-{entry.spent}$</Typography>
-            <Typography variant="p" fontWeight={600} >{entry.content}</Typography>
-            <Button startIcon={<Delete />} variant="contained" color="error" size="small" type="submit" onClick={() => removeEntry(entry.id)}>DELETE</Button>
-            </Stack>
-          </Box>
-       
+          <Grid container alignContent="center" justifyContent="center" key={entry.id}>
+            <Grid item xs={10} sm={6}>
+              <List>
+                <Paper elevation={3}>
+                  <ListItem sx={{
+                  backgroundColor: "#c9c9c9",
+                  marginTop: "5px",
+                  padding: "20px",
+                  justifyContent: "space-between"
+                  }}>
+                  <Typography variant="label" fontWeight={600}>-{entry.spent}$</Typography>
+                  <Typography variant="p" fontWeight={600}>{entry.content}</Typography>
+                  <Button startIcon={<Delete />} variant="contained" color="error" size="small" type="submit" onClick={() => removeEntry(entry.id)}>DELETE</Button>
+                </ListItem>
+                </Paper>
+              </List>
+              </Grid>
+            </Grid>     
         )
-      })}
-    </Container>
+      })
+       
   )
 }
 

@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import axios from 'axios';
-import { Input, TextField, Box, Button, FormControl } from '@mui/material'
+import { Grid, TextField, Box, Button, FormControl } from '@mui/material'
+import { CenterFocusStrong } from '@mui/icons-material';
 
 
 const FormSend = ({ onSubmitSuccess }) => {
@@ -20,15 +21,34 @@ const FormSend = ({ onSubmitSuccess }) => {
       }; 
 
     return (
-        <Box className='form-send'>
-            <form id="create-form" onSubmit={handleSubmit} >
-              <FormControl>
-                <TextField type="number" label="Expended" variant="filled"  className="spent" required value={spent} onChange={(e) => setForm({...form, spent: e.target.value})} />
-                <TextField label="For what" variant="filled" className="content" required value={content} onChange={(e) => setForm({...form, content: e.target.value})} />
-                <Button variant="contained" type="submit">Add</Button>
-              </FormControl>
-            </form>
-        </Box>
+      <Grid container justifyContent="center" alignItems="center" my={4} mb={15}>
+        <Grid item xs={6} sm={4} md={4} borderRadius={5}> 
+          <form id="create-form" onSubmit={handleSubmit}>
+            <FormControl fullWidth>
+              <TextField
+                type="number"
+                label="Expended"
+                variant="filled"
+                className="spent"
+                required 
+                value={spent} 
+                onChange={(e) => setForm({...form, spent: e.target.value})} 
+              />
+            </FormControl>
+            <FormControl fullWidth> 
+              <TextField
+                label="For what"
+                variant="filled"
+                className="content"
+                required
+                value={content}
+                onChange={(e) => setForm({...form, content: e.target.value})}
+              />
+            </FormControl> 
+            <Button fullWidth variant="contained" type="submit">Add</Button>
+          </form>
+        </Grid>
+      </Grid>
     );
   }
 

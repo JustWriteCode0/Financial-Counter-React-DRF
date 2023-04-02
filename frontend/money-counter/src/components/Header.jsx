@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <AppBar position='sticky' >
             <Toolbar>
-                <Typography variant="h3">Hello world</Typography>
+                <Typography variant="label">Hello world</Typography>
                 <Typography variant="a">Hello world</Typography>
                 <Typography variant="a">Hello world</Typography>
                 <Typography variant="a">Hello world</Typography>
