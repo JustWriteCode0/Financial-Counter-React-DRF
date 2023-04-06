@@ -19,7 +19,7 @@ const App = () => {
     <Box variant="div">
       <Header />
       <Box variant="div">
-        <FormSend onSubmitSuccess={handleFormSubmit}/>
+        <FormSend data={data} onSubmitSuccess={handleFormSubmit}/>
         <Entries data={data} />
       </Box>
       <Footer />

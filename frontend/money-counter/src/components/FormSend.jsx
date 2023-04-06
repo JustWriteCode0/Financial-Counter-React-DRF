@@ -1,13 +1,14 @@
 import React, {useState} from 'react'
 import axios from 'axios';
-import { Grid, TextField, Box, Button, FormControl } from '@mui/material'
+import { Grid, TextField, Select, setSelectedValue, MenuItem, Button, FormControl, Box } from '@mui/material'
 import { CenterFocusStrong } from '@mui/icons-material';
 
 
-const FormSend = ({ onSubmitSuccess }) => {
-    const [form, setForm] = useState({spent: 'i', content: ''}); // state of form, this variable will getting info from form
-    const { spent, content } = setForm;
+const FormSend = ({ onSubmitSuccess, data }) => {
+    const [form, setForm] = useState({category: '', spent: '', content: ''}); // state of form, this variable will getting info from form
+    const { spent, content, category} = setForm;
 
+    const entries = Object.entries(data);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -18,14 +19,16 @@ const FormSend = ({ onSubmitSuccess }) => {
         } catch (error) {
           console.error(error);
         }
-      }; 
-
+      };
+      console.log(entries, 'hi')
     return (
       <Grid container justifyContent="center" alignItems="center" my={4} mb={15}>
         <Grid item xs={6} sm={4} md={4} borderRadius={5}> 
+          
           <form id="create-form" onSubmit={handleSubmit}>
-            <FormControl fullWidth>
+            <Box variant="div" display="flex" flexDirection="row">
               <TextField
+                fullWidth
                 type="number"
                 label="Expended"
                 variant="filled"
@@ -34,7 +37,10 @@ const FormSend = ({ onSubmitSuccess }) => {
                 value={spent} 
                 onChange={(e) => setForm({...form, spent: e.target.value})} 
               />
-            </FormControl>
+              <Select variant="filled" onChange={(e) => setForm({...form, category: e.target.value})}>
+                <MenuItem >Ten</MenuItem>
+              </Select>
+            </Box>
             <FormControl fullWidth> 
               <TextField
                 label="For what"
@@ -47,6 +53,7 @@ const FormSend = ({ onSubmitSuccess }) => {
             </FormControl> 
             <Button fullWidth variant="contained" type="submit">Add</Button>
           </form>
+
         </Grid>
       </Grid>
     );

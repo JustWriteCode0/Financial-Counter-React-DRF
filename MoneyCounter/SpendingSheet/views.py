@@ -10,3 +10,8 @@ from .serializers import EntrySerializer, EntryCategorySerializer
 class EntryViewSet(viewsets.ModelViewSet):
     queryset = Entry.objects.all()
     serializer_class = EntrySerializer
+    
+
+class EntryCategoryViewSet(viewsets.ModelViewSet):
+    queryset = EntryCategory.objects.all()
+    serializer_class = EntryCategorySerializer
