@@ -5,18 +5,15 @@ import { Delete } from '@mui/icons-material'
 
 
 const Entries = ({data}) => {
-  const [entry, setEntry] = useState([])
+  const [entry, setEntry] = useState({data: []})
   
   useEffect(() => {
     // get all entries from main url
       axios
         .get("http://127.0.0.1:8000/api/v1/entry/")
         .then((response) => {
-          setEntry(response.data);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+        setEntry({ data: response.data })
+      });
   }, [data]);
   
 
@@ -26,7 +23,7 @@ const Entries = ({data}) => {
       .delete(`http://127.0.0.1:8000/api/v1/entry/${id}/`)
       .then((response) => {
         console.log(response)
-        setEntry(entry.filter(entry => entry.id !== id)); // update list of entries for call useEffect
+        setEntry({data: entry.data.filter(entry => entry.id !== id)}); // update list of entries for call useEffect
       }) 
       .catch((error) => {
         console.log(error)
@@ -34,7 +31,7 @@ const Entries = ({data}) => {
   }
 
   return (
-      entry.map(entry => {
+      entry.data.map(entry => {
         return (
           <Grid container alignContent="center" justifyContent="center" key={entry.id}>
             <Grid item xs={10} sm={6}>
