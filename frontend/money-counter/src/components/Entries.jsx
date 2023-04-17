@@ -22,7 +22,6 @@ const Entries = ({data}) => {
     axios
       .delete(`http://127.0.0.1:8000/api/v1/entry/${id}/`)
       .then((response) => {
-        console.log(response)
         setEntry({data: entry.data.filter(entry => entry.id !== id)}); // update list of entries for call useEffect
       }) 
       .catch((error) => {
@@ -45,7 +44,8 @@ const Entries = ({data}) => {
                   }}>
                   <Typography variant="label" fontWeight={600}>-{entry.spent}$</Typography>
                   <Typography variant="p" fontWeight={600}>{entry.content}</Typography>
-                  <Button startIcon={<Delete />} variant="contained" color="error" size="small" type="submit" onClick={() => removeEntry(entry.id)}>DELETE</Button>
+                  <Typography variant="p" fontWeight={600}>{entry.category}</Typography>
+                  <Button startIcon={<Delete />} variant="contained" color="error" size="small" type="submit" onClick={() => removeEntry(entry.id)}>DELETE {entry.id}</Button>
                 </ListItem>
                 </Paper>
               </List>

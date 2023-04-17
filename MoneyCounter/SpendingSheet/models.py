@@ -15,8 +15,9 @@ class Entry(models.Model):
 
 
 class EntryCategory(models.Model):
-    name = models.CharField(max_length=50)
+    title = models.CharField(max_length=50)
     describe = models.CharField(max_length=150, null=True, blank=True)
+    color = models.CharField(max_length=7, null=True, blank=True)
 
     def __str__(self):
         return self.name
