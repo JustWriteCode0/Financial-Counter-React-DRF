@@ -10,8 +10,6 @@ class Entry(models.Model):
 
     def __str__(self):
         return self.content
-        
-
 
 
 class EntryCategory(models.Model):
@@ -20,4 +18,4 @@ class EntryCategory(models.Model):
     color = models.CharField(max_length=7, null=True, blank=True)
 
     def __str__(self):
-        return self.name
+        return self.title
