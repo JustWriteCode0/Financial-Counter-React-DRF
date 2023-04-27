@@ -6,13 +6,14 @@ import { Delete } from '@mui/icons-material'
 
 const Entries = ({data}) => {
   const [entry, setEntry] = useState({data: []})
+  const [category, setCategory] = useState({category: []})
   
   useEffect(() => {
     // get all entries from main url
       axios
         .get("http://127.0.0.1:8000/api/v1/entry/")
         .then((response) => {
-        setEntry({ data: response.data })
+          setEntry({ data: response.data })
       });
   }, [data]);
   
@@ -52,8 +53,7 @@ const Entries = ({data}) => {
               </Grid>
             </Grid>     
         )
-      })
-       
+    })   
   )
 }
 
