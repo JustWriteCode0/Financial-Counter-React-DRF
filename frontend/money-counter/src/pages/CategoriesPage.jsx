@@ -10,8 +10,6 @@ const CategoriesPage = () => {
     const handleCategorySubmit = (newData) => {
         setData({category: [...data.category, newData]})
     }
-
-    console.log(data.category, 'data.category')
     
     return (
       <Box>

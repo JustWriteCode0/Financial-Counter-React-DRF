@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { Routes, Route } from 'react-router-dom'
 import CategoriesPage from '../pages/CategoriesPage';
 import EntriesPage from "../pages/EntriesPage";
+import AnalyticPage from "../pages/AnalyticPage";
 
 const Header = () => {
     return (
@@ -13,7 +14,6 @@ const Header = () => {
                 <Typography mr={2} variant="label" className="brand-logo">Counter</Typography>
                 <Link to="/" className="navbar-item">Entries</Link>
                 <Link to="/category" className="navbar-item">Category</Link>
-                <Typography variant="a" className="navbar-item">Analytic</Typography>
             </Toolbar> 
         </AppBar>
         <Routes>

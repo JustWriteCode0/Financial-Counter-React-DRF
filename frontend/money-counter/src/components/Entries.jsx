@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import axios from 'axios'
+import axios, { isAxiosError } from 'axios'
 import { Paper, Typography, Button, Grid, List, ListItem } from '@mui/material'
 import { Delete } from '@mui/icons-material'
 
@@ -16,7 +16,7 @@ const Entries = ({data}) => {
           setEntry({ data: response.data })
       });
   }, [data]);
-  
+
 
   const removeEntry = (id) => {
     // send delete request to server and remove an entry by id
