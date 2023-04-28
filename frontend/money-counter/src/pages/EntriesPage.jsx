@@ -5,10 +5,10 @@ import { Box } from "@mui/material"
 
 
 const EntriesPage = () => {
-    const [data, setData] = useState({entry: []}) // создаем состояние для данных
+    const [data, setData] = useState({entry: []})
 
     const handleFormSubmit = (newData) => {
-      setData({entry: [...data.entry, newData]}) // добавляем новые данные в состояние
+      setData({entry: [...data.entry, newData]})
     }
     return (
         <Box variant="div">

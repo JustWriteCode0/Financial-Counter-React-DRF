@@ -9,7 +9,7 @@ const Categories = ({data}) => {
     const [categories, setCategories] = useState({data: []})
 
     useEffect(() => {
-        // get all categories from main url
+        // get all categories from url
           axios
             .get("http://127.0.0.1:8000/api/v1/category/")
             .then((response) => {
@@ -18,6 +18,7 @@ const Categories = ({data}) => {
       }, [data]);
 
     const deleteCategory = (id) => {
+        // remove category by id and send delete request to server
         axios
         .delete(`http://127.0.0.1:8000/api/v1/category/${id}/`)
         .then((response) => {

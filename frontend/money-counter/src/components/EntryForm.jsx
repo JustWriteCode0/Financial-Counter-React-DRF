@@ -9,6 +9,7 @@ const EntryForm = ({ onSubmitSuccess, data }) => {
     const [categories, setCategories] = useState({categories: []}) // categories that we get from category url
 
     const handleSubmit = async (event) => {
+      // on submit add new entry
         event.preventDefault();
         try {
           const response = await axios.post('http://127.0.0.1:8000/api/v1/entry/', form); // send data to server
@@ -19,6 +20,7 @@ const EntryForm = ({ onSubmitSuccess, data }) => {
       };
 
       useEffect(() => {
+        // get categories and write to variable
         axios
           .get("http://127.0.0.1:8000/api/v1/category/")
           .then((response) => {

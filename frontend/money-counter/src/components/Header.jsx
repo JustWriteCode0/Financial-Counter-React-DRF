@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { Routes, Route } from 'react-router-dom'
 import CategoriesPage from '../pages/CategoriesPage';
 import EntriesPage from "../pages/EntriesPage";
-import AnalyticPage from "../pages/AnalyticPage";
+
 
 const Header = () => {
     return (
