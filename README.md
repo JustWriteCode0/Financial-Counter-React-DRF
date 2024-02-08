@@ -1,12 +1,3 @@
-Money counter was created for practice with django rest framework and react
+The "Financial Counter" project is a practical and functional application created for learning and diving into the world of web development using Django REST Framework (DRF) and React. This project grew out of a desire to learn how to create full-fledged web applications capable of managing financial data using modern technologies.
 
-stack: react, django rest framework, material ui
-
-This project is not fully completed, but my goal to understand everything I need is achieved
-
-During the development of this project, I learned how to work with react and material UI, as well as how to use the django rest framework.
-
-I can add postgresql, set up docker and add redux, but all of that doesn't make sense because my goal was to learn react and DRF
-
-
-if you want to start this project you should install all dependenses for npm and for DRF
+The main goal of the project is to provide users with a tool for tracking their financial transactions, including income, expenses, and other monetary operations. With "Financial Counter," users can efficiently manage their finances, analyze their spending, and create budgets.
